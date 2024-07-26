@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aster News</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'amber-black': '#072D4B',
+            },
+            fontFamily: {
+               roboto: ["Roboto", 'sans-serif']
+            },
+            borderWidth: {
+              '0.1': '0.1px',
+            },
+          }
+        }
+      }
+    </script>
+</head>
+<body class="font-roboto bg-[#F4F9F8]">
+    <div class="container mx-auto flex">
+        <!-- SIDEBAR SECTION -->
+        <nav id="sidebar" class="h-screen fixed overflow-y-hidden hover:overflow-y-auto flex flex-col pt-5 pr-4">
+            <!-- LOGO AND NAME DIV -->
+            <div class="pl-8 flex items-center gap-4 mb-8 cursor-pointer">
+                <div class="w-8 h-8">
+                    <img src="./images/logo.svg" class="object-contain" alt="Aster News Logo">
+                </div>
+                <span class="text-lg font-bold text-[#0768B5]">Aster News</span>
+            </div>
+
+            <!-- MENUS ACTIVE-->
+            <div class="w-60 h-12 bg-[#E1F1F9] rounded-r-full flex-shrink-0 flex items-center pl-4 mb-4 cursor-pointer">
+                <div class="w-1.5 h-1.5 bg-[#2F9FF8] rounded-full mr-3"></div>
+                <img src="./images/home.svg" class="w-6 h-6" alt="Home">
+                <span class="ml-5 text-[#2F9FF8] font-bold text-sm">Top Stories</span>
+            </div>
+
+            <div class="flex items-center mb-8 cursor-pointer">
+                <img src="./images/globe.svg" class="w-6 h-6 ml-8 mr-6" alt="Around the World">
+                <span class="text-amber-black text-sm">Around the World</span>
+            </div>
+
+            <div class="flex items-center mb-8 cursor-pointer">
+                <img src="./images/business.svg" class="w-6 h-6 ml-8 mr-6" alt="Business">
+                <span class="text-amber-black text-sm">Business</span>
+            </div>
+
+            <div class="flex items-center mb-8 cursor-pointer">
+                <img src="./images/heartbeat.svg" class="w-6 h-6 ml-8 mr-6" alt="Health">
+                <span class="text-amber-black text-sm">Health</span>
+            </div>
+
+            <hr class="text-[#667F90] mb-5 border">
+
+            <div class="flex items-center mb-8 cursor-pointer">
+                <img src="./images/covid.svg" class="w-6 h-6 ml-8 mr-6" alt="Covid-19">
+                <span class="text-amber-black text-sm">Covid 19</span>
+            </div>
+
+            <hr class="text-[#667F90] mb-8 border">
+
+            <div class="flex items-center mb-8 cursor-pointer">
+                <img src="./images/play-circle.svg" class="w-6 h-6 ml-8 mr-6" alt="Entertainment">
+                <span class="text-amber-black text-sm">Entertainment</span>
+            </div>
+
+            <div class="flex items-center mb-8 cursor-pointer">
+                <img src="./images/award.svg" class="w-6 h-6 ml-8 mr-6" alt="Sports">
+                <span class="text-amber-black text-sm">Sports</span>
+            </div>
+
+            <div class="flex items-center mb-8 cursor-pointer">
+                <img src="./images/message-circle.svg" class="w-6 h-6 ml-8 mr-6" alt="Discussion">
+                <span class="text-amber-black text-sm">Discussion</span>
+            </div>
+
+            <div class="flex items-center mb-8 cursor-pointer">
+                <img src="./images/bell.svg" class="w-6 h-6 ml-8 mr-6" alt="Notification">
+                <span class="text-amber-black text-sm">Notification</span>
+            </div>
+
+            <div class="flex items-center cursor-pointer">
+                <img src="./images/settings.svg" class="w-6 h-6 ml-8 mr-6" alt="News Feed Settings">
+                <span class="text-amber-black text-sm">News Feed Settings</span>
+            </div>
+
+            <!-- SUBSCRIBE GIFT -->
+            <div class="mb-8 px-4 mt-32"> 
+                <div class="bg-[#2f9ff8] p-4 rounded-md"> 
+                    <div class="flex items-center space-x-4 mb-3"> 
+                        <figure class="w-6 h-6"> 
+                            <img src="./images/gift.svg" class="object-cover text-white" alt="Gift"> 
+                        </figure> 
+                        <p class="font-normal text-sm text-white">Subscribe to Premium</p> 
+                    </div> 
+                    <div class="flex justify-between items-center"> 
+                        <p class="text-white"><span class="font-bold text-2xl text-white">$8</span>/m</p> 
+                        <button class="py-2 px-4 bg-[#0768B5] text-white w-28 text-center rounded-md"> 
+                            Upgrade 
+                        </button> 
+                    </div> 
+                </div> 
+            </div>
+        </nav>
+
+        <!-- MAIN DIV -->
+        <main id="main" class="ml-72 flex-1 overflow-y-auto px-8">
+            <!-- HEADER -->
+            <header class="flex pt-4 relative">
+                <div class="relative flex mr-10">
+                    <input type="text" placeholder="Search for news.." class="w-96 h-12 p-4 bg-[#ECF5F8] rounded focus:outline-none">
+                    <img src="./images/search.svg" class="absolute right-3 top-3" alt="Search">
+                </div>
+                
+                <div class="h-12 w-64 p-4 flex items-center border border-[#072D4B] rounded relative">
+                    <p class="text-sm text-amber-black">Latest news on <span class="text-[#2F9FF8] font-medium">Covid-19</span></p>
+                    <img src="./images/arrow-right.svg" class="absolute right-2 top-3" alt="Arrow Right">
+                </div>
+
+                <div class="flex items-center absolute right-0 top-6">
+                    <img src="./images/user.svg" alt="User">
+                    <span class="ml-3 mr-9">My Profile</span>
+                    <img src="./images/down.svg" alt="Down Arrow">
+                </div>
+            </header>
+
+            <p class="text-amber-black mt-10 mb-6 font-bold text-2xl leading-6">Top Stories for you</p>
+
+            <!-- LEFT AND RIGHT -->
+            <div class="flex gap-11">
+                <div class="grid grid-cols-2 gap-5 mb-11">
+                    <!-- STORIES AND CREATOR DIV -->
+                    <div class="pt-4 pb-3 pl-5 pr-4 rounded bg-white flex flex-col shadow-lg">
+                        <div class="flex">
+                            <div class="flex flex-col mr-5">
+                                <span class="w-44 font-medium text-lg text-amber-black mb-2">Battlegrounds Mobile India iOS release date</span>
+                                <span class="w-44 text-sm leading-6 opacity-60 text-amber-black">The reason behind their disappointment is that iPhone users have been...</span>
+                            </div>
+                            <div>
+                                <img src="./images/pubg.svg" alt="PUBG Mobile" class="object-cover">
+                            </div>
+                        </div>
+
+                        <div class="flex items-center pt-4">
+                            <img src="./images/smile.svg" class="w-6 h-6 mr-4" alt="Smile Icon">
+                            <span class="mr-2 text-sm text-[#8EA2B3]">Trending with</span>
+                            <span class="mr-2 text-sm text-[#2F9FF8]">#battleground</span>
+                            <span class="text-sm text-[#2F9FF8]">#pubg</span>
+                        </div>
+                    </div>
+
+                    <!-- ... repeat similar blocks for other news items ... -->
+                </div>
+
+                <!-- TRENDING SECTION -->
+                <aside class="flex-1">
+                    <div class="rounded bg-white shadow-md p-4">
+                        <p class="text-amber-black font-bold text-2xl leading-6">Trending</p>
+
+                        <div class="pt-6 pl-3 pr-3 pb-7 flex justify-between cursor-pointer">
+                            <div class="flex flex-col justify-between">
+                                <span class="w-52 font-medium text-sm text-amber-black leading-5">Eternals actors have worked with Chloé Zao before</span>
+                                <span class="w-52 font-light text-xs opacity-60 text-amber-black">“Eternals” had an impressive debut weekend...</span>
+                            </div>
+                            <div class="w-20 h-20">
+                                <img src="./images/friends.svg" class="object-cover" alt="Friends">
+                            </div>
+                        </div>
+                        
+                        <hr class="text-[#E4EBF0] border-0.1 mb-3">
+                        
+                        <!-- ... repeat similar blocks for other trending items ... -->
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
